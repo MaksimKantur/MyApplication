@@ -42,7 +42,8 @@ fun Bmi() {
     var weightInput: String by remember { mutableStateOf("") }
     val height = heightInput.toFloatOrNull() ?: 0.0f
     val weight = weightInput.toIntOrNull() ?: 0
-    val bmi = if (weight > 0 && height > 0) weight/ (height * height) else 0.0
+    val bmi = if (weight > 0 && height > 0) weight / ((height / 100) * (height / 100)) else 0.0
+
     Column(
         modifier = Modifier.padding(8.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp)
